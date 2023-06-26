@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sender Login</title>
+    <style>
+        body {
+            background-color: #6208f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+
+        .card h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .card button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Create Sender</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <label for="{{ form.name.id_for_label }}">Name:</label>
+            {{ form.name }}
+            
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+            
+           
+            
+            
+            <button type="submit">Submit</button>
+        </form>
+        <p>Don't have an account? <a href="/register/">Register</a></p>
+    </div>
+
+</body>
+</html>
